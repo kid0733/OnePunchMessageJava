@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1012963525631",
+    "project_id": "onepunchmessenger",
+    "storage_bucket": "onepunchmessenger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012963525631:android:313b745b122e2ed0135dca",
+        "android_client_info": {
+          "package_name": "com.example.onepunchmessenger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUOMoB-Elea48KT6KBPJKvFeF3LNr3yfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
