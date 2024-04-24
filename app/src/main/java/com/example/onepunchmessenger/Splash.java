@@ -24,6 +24,8 @@ public class Splash extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //send to next activity(registration)
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
