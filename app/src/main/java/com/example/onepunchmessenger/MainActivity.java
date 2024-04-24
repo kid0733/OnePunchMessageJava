@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         //auth
         auth=FirebaseAuth.getInstance();
         if(auth.getCurrentUser()==null){
-            Intent intent=new Intent(MainActivity.this, Registration.class);
+            Intent intent=new Intent(MainActivity.this, Login.class);
             startActivity(intent);
             finish();
 

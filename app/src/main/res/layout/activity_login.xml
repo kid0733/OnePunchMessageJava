@@ -76,11 +76,15 @@
         android:gravity="center"
         android:text="Email"
         android:textSize="@dimen/_18sdp"
-        app:layout_constraintStart_toStartOf="@+id/editTextLogEmail"
-        tools:layout_editor_absoluteY="283dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418" />
 
     <EditText
-        android:id="@+id/editTextLogEmail"
+        android:id="@+id/LogEmail"
         android:layout_width="281dp"
         android:layout_height="45dp"
         android:ems="10"
@@ -106,12 +110,14 @@
         android:text="Password"
         android:textSize="@dimen/_18sdp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/editTextLogPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/LogPassword"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.572" />
 
     <EditText
-        android:id="@+id/editTextLogPassword"
+        android:id="@+id/LogPassword"
         android:layout_width="283dp"
         android:layout_height="42dp"
         android:ems="10"
