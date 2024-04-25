@@ -10,6 +10,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
     //Auth
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         //auth
         auth=FirebaseAuth.getInstance();
         if(auth.getCurrentUser()==null){
-            Intent intent=new Intent(MainActivity.this, Login.class);
+            Intent intent=new Intent(MainActivity.this, Registration.class);
             startActivity(intent);
             finish();
 
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//test the FB database
+////test the FB database
 //        // Write a message to the database
 //        FirebaseDatabase database = FirebaseDatabase.getInstance();
 //        DatabaseReference myRef = database.getReference("message");

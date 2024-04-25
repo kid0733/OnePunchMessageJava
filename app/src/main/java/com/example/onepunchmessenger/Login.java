@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -26,6 +27,8 @@ public class Login extends AppCompatActivity {
     EditText email;
     EditText password;
 
+    TextView signUp;
+
 
     //Auth
     FirebaseAuth auth;
@@ -41,16 +44,27 @@ public class Login extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        getSupportActionBar().hide();
         //setting auth
         auth=FirebaseAuth.getInstance();
+        // Check if the user is already logged in
+
         //setting form fields into the container variables
         button=findViewById(R.id.logButton);
         email= findViewById(R.id.LogEmail);
         password= findViewById(R.id.LogPassword);
-
+        signUp=findViewById(R.id.signupButton);
         //Input Vlaidation variables
         String emailPattern = "[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+(?:\\.[a-zA-Z0-9-]+)*";
+
+        //Click Listener -> Signup button [click]
+        signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Login.this, Registration.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         //Click Listener ->Login Button [click]
         button.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +84,7 @@ public class Login extends AppCompatActivity {
                 } else if (Password.length()<6) {
                     password.setError("Password length must be longer than 6 characters.");
                     Toast.makeText(Login.this, "Password length must be longer than 6 characters.", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     //attempt sign in
                     auth.signInWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -82,12 +96,12 @@ public class Login extends AppCompatActivity {
                                     Intent intent=new Intent(Login.this,MainActivity.class);
                                     startActivity(intent);
                                     finish();
+                                } catch (Exception e) {
                                     //If error in switching activities
-                                }catch (Exception e){
                                     Toast.makeText(Login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
+                            } else {
                                 //If task is unsuccessful [login]
-                            }else{
                                 Toast.makeText(Login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
