@@ -18,6 +18,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -46,7 +47,7 @@ public class Registration extends AppCompatActivity {
     String emailPattern = "[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+(?:\\.[a-zA-Z0-9-]+)*";
     FirebaseDatabase database;
     FirebaseStorage storage;
-
+    LottieAnimationView progressAnimation;
     Uri imageURI;
     String imageUri;
 
@@ -60,6 +61,10 @@ public class Registration extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        //Setting animation
+        progressAnimation = findViewById(R.id.loadingAnimation);
+        progressAnimation.setVisibility(View.GONE);
+
 
         //initiating firebase variables
         database=FirebaseDatabase.getInstance();
@@ -133,6 +138,7 @@ public class Registration extends AppCompatActivity {
                                                             @Override
                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                 if(task.isSuccessful()){
+                                                                    progressAnimation.setVisibility(View.VISIBLE);
                                                                     Intent intent = new Intent(Registration.this,MainActivity.class);
                                                                     startActivity(intent);
                                                                     finish();
@@ -154,6 +160,7 @@ public class Registration extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if(task.isSuccessful()){
+                                                progressAnimation.setVisibility(View.VISIBLE);
                                                 Intent intent = new Intent(Registration.this,MainActivity.class);
                                                 startActivity(intent);
                                                 finish();
