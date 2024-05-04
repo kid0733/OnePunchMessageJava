@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="325dp"
+    android:layout_height="234dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:layout_margin="13dp"
+    android:background="@drawable/rounded_dialogue">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last chance:"
+        android:textColor="#E6534F"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:textAlignment="center"
+        android:fontFamily="@font/nunito_extra_bold"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log out?"
+        android:textColor="#FCBC25"
+        android:textAlignment="center"
+        android:fontFamily="@font/nunito_extra_bold"
+        android:layout_gravity="center" />
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/yesButton"
+            android:layout_width="114dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/nunito_extra_bold"
+            android:text="Yes"
+            android:textColor="#FCBC25" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/noButton"
+            android:layout_width="114dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:fontFamily="@font/nunito_extra_bold"
+            android:background="@drawable/rounded_button"
+            android:text="No"
+            android:textColor="#FCBC25" />
+
+    </LinearLayout>
+
+</LinearLayout>

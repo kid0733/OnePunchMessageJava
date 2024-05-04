@@ -46,7 +46,7 @@ dependencies {
     implementation libs.circleimageview
     implementation "com.airbnb.android:lottie:6.4.0"
     implementation "com.squareup.picasso:picasso:2.8"
-    implementation "com.google.accompanist:accompanist-systemuicontroller"
+
     
 
 }

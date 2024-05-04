@@ -1,7 +1,11 @@
 package com.example.onepunchmessenger;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -29,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database;
     ArrayList<Users> userArrayList;
 
-
+    ImageView logoutImg;
 
 
 
@@ -75,6 +79,36 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        //Logout image:
+        logoutImg=findViewById(R.id.logoutMain);
+
+        logoutImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog=new Dialog(MainActivity.this,R.style.dialogue);
+                dialog.setContentView(R.layout.dialogue_layout);
+                Button yesBtn=dialog.findViewById(R.id.yesButton);
+                Button noBtn=dialog.findViewById(R.id.noButton);
+                yesBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent=new Intent(MainActivity.this,Login.class);
+                        startActivity(intent);
+
+                    }
+                });
+                noBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+            }
+        });
+
 
         //RecyclerView
         mainUserRecyclerView=findViewById(R.id.mainUserRecyclerView);
