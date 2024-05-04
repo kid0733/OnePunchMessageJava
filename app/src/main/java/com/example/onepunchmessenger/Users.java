@@ -2,6 +2,16 @@ package com.example.onepunchmessenger;
 
 public class Users {
 
+    public Users(){
+        profileImg = "";
+        mail = "";
+        username = "";
+        password = "";
+        userId = "";
+        lastMessage = "";
+        status = "";
+    }
+
     //init variables
     String profileImg,mail,username,password,userId,lastMessage,status;
 

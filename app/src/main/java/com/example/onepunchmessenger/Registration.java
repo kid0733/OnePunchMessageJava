@@ -154,7 +154,7 @@ public class Registration extends AppCompatActivity {
                                     });
                                 }else{
                                     String status="Ah, a visitor! Make yourself at home.";
-                                    imageUri="https://firebasestorage.googleapis.com/v0/b/onepunchmessenger.appspot.com/o/logo.png?alt=media&token=e721b21b-9518-4b8c-bcf8-07f1195d4901";
+                                    imageUri="https://firebasestorage.googleapis.com/v0/b/onepunchmessenger.appspot.com/o/rounded_photo.png?alt=media&token=1805f46e-12a8-4b93-9929-0bf449ab78a3";
                                     Users users=new Users(id,username,email,password,imageUri,status);
                                     reference.setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override

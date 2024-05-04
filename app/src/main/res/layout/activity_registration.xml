@@ -12,7 +12,7 @@
         android:id="@+id/profilerg0"
         android:layout_width="70dp"
         android:layout_height="74dp"
-        android:src="@drawable/logo"
+        android:src="@drawable/rounded_photo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
