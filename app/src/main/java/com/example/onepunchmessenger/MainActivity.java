@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent=new Intent(MainActivity.this,Login.class);
                         startActivity(intent);
 
+                        finish();
                     }
                 });
                 noBtn.setOnClickListener(new View.OnClickListener() {

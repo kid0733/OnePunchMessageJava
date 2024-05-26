@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#66FFFFFF"/> <!-- Transparent white color -->
+            <corners android:radius="32.5dp"/> <!-- Corner radius -->
+        </shape>
+    </item>
+    <item>
+        <bitmap
+            android:src="@drawable/blur_textbox"
+            android:gravity="center"/>
+    </item>
+</layer-list>

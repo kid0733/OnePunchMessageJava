@@ -1,5 +1,6 @@
 package com.example.onepunchmessenger;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,18 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.viewholder> {
         holder.status.setText(users.status);
         Picasso.get().load(users.profileImg).into(holder.userImg);
 
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mainActivity, chatWin.class);
+                intent.putExtra("name_user",users.getUsername());
+                intent.putExtra("receiver_img",users.getProfileImg());
+                intent.putExtra("uid",users.getUserId());
+                mainActivity.startActivity(intent);
+
+            }
+        });
     }
 
     @Override
